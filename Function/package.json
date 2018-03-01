@@ -1,0 +1,10 @@
+{
+    "name": "blog-poc",
+    "version": "0.0.1",
+    "description": "Function used to calculate sentiments for tweets",
+    "repository": {},
+    "license": "ISC",
+    "dependencies": {
+        "https": "1.0.0"
+    }
+}

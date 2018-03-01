@@ -1,0 +1,25 @@
+{
+	"bindings": [
+	  {
+		"type": "cosmosDBTrigger",
+		"name": "documents",
+		"direction": "in",
+		"leaseCollectionName": "leases",
+		"connectionStringSetting": "blog-poc_DOCUMENTDB",
+		"databaseName": "Monitoring",
+		"collectionName": "Tweets",
+		"sqlQuery": "SELECT * from c where NOT is_defined(c.sentiment)",
+		"createLeaseCollectionIfNotExists": true
+	  },
+	  {
+		"type": "documentDB",
+		"name": "outputDocument",
+		"databaseName": "Monitoring",
+		"collectionName": "Tweets",
+		"createIfNotExists": false,
+		"connection": "blog-poc_DOCUMENTDB",
+		"direction": "out"
+	  }
+	],
+	"disabled": false
+  }

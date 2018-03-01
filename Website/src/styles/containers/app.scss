@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i');
+
+.app-container {
+    width: 100%;
+    font-family: 'Roboto';
+    background-color: #e2e2e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    & > div {
+        max-width: 50%;
+        margin: 50px auto;
+
+		@media (max-width: 1050px) {
+			max-width: 80%;
+		}
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 1.8em;
+        background-color: #0984e3;
+        color: white;
+        padding: 20px;
+        font-weight: 300;
+    }
+    .items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid #b2bec3;
+        background-color: white;
+		padding: 20px;
+
+        .item {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            margin-bottom: 0;
+            padding-bottom: 20px;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid #b2bec3;
+            }
+            
+            .text {
+                flex: 0 0 100%;
+                color: #3f3f3f;
+                font-style: italic;
+                padding: 20px 10px;
+				
+				@media (max-width: 1050px) {
+					flex: 0 1 100%;
+					word-break: break-all;
+				}
+            }
+
+            p:not(.text) {
+                flex: 1;
+                font-weight: 300;
+				font-size: 0.9em;
+				
+				@media (max-width: 1050px) {
+					flex: 1 100%;
+					margin-bottom: 10px;
+				}
+            }
+
+            p {
+                line-height: 1em;
+                vertical-align: middle;
+                box-sizing: border-box;
+            }
+
+            p.sentiment {
+                flex: 0 1 60px;
+                font-size: 0.7em;
+                padding: 3px;
+                text-align: center;
+				color: white;
+				
+				@media (max-width: 1050px) {
+					flex: 1 100%;
+				}
+            }
+    
+            p.sentiment.positive {
+                background-color: rgba(#00b894, 0.5);
+            }
+    
+            p.sentiment.negative {
+                background-color: rgba(#d63031, 0.5);
+            }
+    
+            p.sentiment.neutral {
+                background-color: #e2e2e2;
+                color: unset;
+            }
+
+            p.author, p.date {
+                text-align: right;
+				
+				@media (max-width: 1050px) {
+					text-align: center;
+				}
+            }
+
+            a {
+                text-decoration: none;
+                color: #0984e3;
+
+                &:hover {
+                    color: #74b9ff;
+                }
+            }
+        }
+    }
+}
